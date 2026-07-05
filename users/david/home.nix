@@ -3,7 +3,7 @@
   config,
   username,
   local,
-  self,
+  dotfiles,
   ...
 }:
 {
@@ -31,13 +31,17 @@
 
   home.file = {
     nvim = {
-      source = "${self}/dotfiles/stow/nvim/dot-config/nvim";
+      source = "${dotfiles}/stow/nvim/dot-config/nvim";
       target = ".config/nvim";
       recursive = true;
     };
-    zsh = {
-      source = "${self}/dotfiles/stow/zsh/dot-config/zsh";
-      target = ".config/zsh";
+    zshrc = {
+      source = "${dotfiles}/stow/zsh/dot-config/zsh/.zshrc";
+      target = ".config/zsh/.zshrc";
+    };
+    zsh-themes = {
+      source = "${dotfiles}/stow/zsh/dot-config/zsh/themes";
+      target = ".config/zsh/themes";
       recursive = true;
     };
     # without this the sessionVariables will never be sourced
@@ -50,16 +54,16 @@
       target = ".config/zsh/.zprofile";
     };
     zsh-env = {
-      source = "${self}/dotfiles/stow/zsh/dot-zshenv";
+      source = "${dotfiles}/stow/zsh/dot-zshenv";
       target = ".zshenv";
     };
     tmux = {
-      source = "${self}/dotfiles/stow/tmux/.config/tmux";
+      source = "${dotfiles}/stow/tmux/.config/tmux";
       target = ".config/tmux";
       recursive = true;
     };
     tmux-sessionizer = {
-      source = "${self}/dotfiles/stow/tmux-sessionizer/dot-local/bin/tmux-sessionizer";
+      source = "${dotfiles}/stow/tmux-sessionizer/dot-local/bin/tmux-sessionizer";
       target = ".local/bin/tmux-sessionizer";
     };
   };

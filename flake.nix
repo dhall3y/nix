@@ -9,14 +9,19 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    dotfiles = {
+      url = "git+https://github.com/dhall3y/.dotfiles.git?ref=stow";
+      flake = false;
+    };
   };
 
   outputs =
     {
-      self,
       nixpkgs,
       nixos-wsl,
       home-manager,
+      dotfiles,
       ...
     }:
     {
@@ -30,7 +35,7 @@
             specialArgs = {
               inherit username;
               inherit local;
-              inherit self;
+              inherit dotfiles;
             };
           in
           nixpkgs.lib.nixosSystem {
@@ -63,7 +68,7 @@
             specialArgs = {
               inherit username;
               inherit local;
-              inherit self;
+              inherit dotfiles;
             };
           in
           nixpkgs.lib.nixosSystem {

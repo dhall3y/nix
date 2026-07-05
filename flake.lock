@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1782060364,
+        "narHash": "sha256-rHtAAZlpoCswMHFO6mlCfxxvkeMpsleJKTkdFniLEEs=",
+        "ref": "stow",
+        "rev": "fad4291311396cc09ca2e090b8e676f8247e370c",
+        "revCount": 59,
+        "type": "git",
+        "url": "https://github.com/dhall3y/.dotfiles.git"
+      },
+      "original": {
+        "ref": "stow",
+        "type": "git",
+        "url": "https://github.com/dhall3y/.dotfiles.git"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -91,6 +108,7 @@
     },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2"
