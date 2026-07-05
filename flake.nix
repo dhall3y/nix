@@ -48,6 +48,8 @@
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
 
+                home-manager.backupFileExtension = "bak";
+
                 home-manager.extraSpecialArgs = specialArgs;
                 home-manager.users.${username} = import ./users/${username}/home.nix;
               }
@@ -76,6 +78,8 @@
               {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
+
+                home-manager.backupFileExtension = "bak";
 
                 home-manager.extraSpecialArgs = specialArgs;
                 home-manager.users.${username} = import ./users/${username}/home.nix;
