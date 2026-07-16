@@ -43,7 +43,7 @@
             system = "x86_64-linux";
 
             modules = [
-              ./hosts/personal/config
+              ./hosts/work/config
               ./users/${username}/nixos.nix
 
               nixos-wsl.nixosModules.default
