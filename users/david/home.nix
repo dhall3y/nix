@@ -119,6 +119,13 @@
     };
   };
 
+  programs.gpg.enable = true;
+
+  services.gpg-agent = {
+    enable = true;
+    pinentry.package = pkgs.pinentry-curses;
+  };
+
   # tells home manager to assume xdg for nix paths
   # works with nix.settings.use-xdg-base-directories
   nix.assumeXdg = true;
